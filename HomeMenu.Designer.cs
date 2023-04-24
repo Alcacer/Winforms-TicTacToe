@@ -67,6 +67,7 @@
             this.VersusComButton.TabIndex = 2;
             this.VersusComButton.Text = "Versus Computer";
             this.VersusComButton.UseVisualStyleBackColor = false;
+            this.VersusComButton.Click += new System.EventHandler(this.VersusComButton_Click);
             // 
             // VersusPlayerButton
             // 

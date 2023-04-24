@@ -9,3 +9,4 @@ C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winfor
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.csproj.CoreCompileInputs.cache
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.exe
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.pdb
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe_with_Winforms.GameForm.resources

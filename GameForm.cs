@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TicTacToe_with_Winforms
 {
-    public partial class HomeMenu : Form
+    public partial class GameForm : Form
     {
-        public HomeMenu()
+        public GameForm()
         {
             InitializeComponent();
-        }
-
-        private void VersusComButton_Click(object sender, EventArgs e)
-        {
-            GameForm gameForm = new GameForm();
-            gameForm.Show();
         }
     }
 }
