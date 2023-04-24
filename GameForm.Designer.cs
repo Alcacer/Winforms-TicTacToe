@@ -63,13 +63,15 @@
             // 
             this.FirstPlayerScore.BackColor = System.Drawing.Color.White;
             this.FirstPlayerScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FirstPlayerScore.Cursor = System.Windows.Forms.Cursors.Default;
             this.FirstPlayerScore.Enabled = false;
-            this.FirstPlayerScore.Font = new System.Drawing.Font("Cambria Math", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstPlayerScore.ForeColor = System.Drawing.Color.Black;
+            this.FirstPlayerScore.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstPlayerScore.ForeColor = System.Drawing.Color.IndianRed;
             this.FirstPlayerScore.Location = new System.Drawing.Point(132, 56);
             this.FirstPlayerScore.Name = "FirstPlayerScore";
-            this.FirstPlayerScore.Size = new System.Drawing.Size(51, 26);
+            this.FirstPlayerScore.Size = new System.Drawing.Size(35, 26);
             this.FirstPlayerScore.TabIndex = 1;
+            this.FirstPlayerScore.Text = "0";
             // 
             // ScoresLabel
             // 
@@ -99,12 +101,13 @@
             this.SecondPlayerScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SecondPlayerScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.SecondPlayerScore.Enabled = false;
-            this.SecondPlayerScore.Font = new System.Drawing.Font("Cambria Math", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecondPlayerScore.ForeColor = System.Drawing.Color.Black;
+            this.SecondPlayerScore.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondPlayerScore.ForeColor = System.Drawing.Color.IndianRed;
             this.SecondPlayerScore.Location = new System.Drawing.Point(352, 56);
             this.SecondPlayerScore.Name = "SecondPlayerScore";
-            this.SecondPlayerScore.Size = new System.Drawing.Size(51, 26);
+            this.SecondPlayerScore.Size = new System.Drawing.Size(35, 26);
             this.SecondPlayerScore.TabIndex = 1;
+            this.SecondPlayerScore.Text = "0";
             // 
             // BackButton
             // 
@@ -139,7 +142,7 @@
             this.PlayerIndicatorLabel.AutoSize = true;
             this.PlayerIndicatorLabel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerIndicatorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.PlayerIndicatorLabel.Location = new System.Drawing.Point(135, 96);
+            this.PlayerIndicatorLabel.Location = new System.Drawing.Point(129, 102);
             this.PlayerIndicatorLabel.Name = "PlayerIndicatorLabel";
             this.PlayerIndicatorLabel.Size = new System.Drawing.Size(175, 16);
             this.PlayerIndicatorLabel.TabIndex = 0;
