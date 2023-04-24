@@ -53,7 +53,7 @@
             this.FirstPlayerLabel.AutoSize = true;
             this.FirstPlayerLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstPlayerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.FirstPlayerLabel.Location = new System.Drawing.Point(28, 56);
+            this.FirstPlayerLabel.Location = new System.Drawing.Point(49, 56);
             this.FirstPlayerLabel.Name = "FirstPlayerLabel";
             this.FirstPlayerLabel.Size = new System.Drawing.Size(98, 19);
             this.FirstPlayerLabel.TabIndex = 0;
@@ -67,11 +67,13 @@
             this.FirstPlayerScore.Enabled = false;
             this.FirstPlayerScore.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstPlayerScore.ForeColor = System.Drawing.Color.IndianRed;
-            this.FirstPlayerScore.Location = new System.Drawing.Point(132, 56);
+            this.FirstPlayerScore.Location = new System.Drawing.Point(153, 56);
             this.FirstPlayerScore.Name = "FirstPlayerScore";
-            this.FirstPlayerScore.Size = new System.Drawing.Size(35, 26);
+            this.FirstPlayerScore.Size = new System.Drawing.Size(29, 26);
             this.FirstPlayerScore.TabIndex = 1;
+            this.FirstPlayerScore.TabStop = false;
             this.FirstPlayerScore.Text = "0";
+            this.FirstPlayerScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScoresLabel
             // 
@@ -105,9 +107,11 @@
             this.SecondPlayerScore.ForeColor = System.Drawing.Color.IndianRed;
             this.SecondPlayerScore.Location = new System.Drawing.Point(339, 56);
             this.SecondPlayerScore.Name = "SecondPlayerScore";
-            this.SecondPlayerScore.Size = new System.Drawing.Size(35, 26);
+            this.SecondPlayerScore.Size = new System.Drawing.Size(29, 26);
             this.SecondPlayerScore.TabIndex = 1;
+            this.SecondPlayerScore.TabStop = false;
             this.SecondPlayerScore.Text = "0";
+            this.SecondPlayerScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BackButton
             // 
@@ -118,9 +122,10 @@
             this.BackButton.Location = new System.Drawing.Point(100, 420);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(109, 41);
-            this.BackButton.TabIndex = 3;
+            this.BackButton.TabIndex = 1;
             this.BackButton.Text = "Back to Menu";
             this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // PlayAgainButton
             // 
@@ -132,7 +137,7 @@
             this.PlayAgainButton.Location = new System.Drawing.Point(230, 420);
             this.PlayAgainButton.Name = "PlayAgainButton";
             this.PlayAgainButton.Size = new System.Drawing.Size(103, 41);
-            this.PlayAgainButton.TabIndex = 3;
+            this.PlayAgainButton.TabIndex = 2;
             this.PlayAgainButton.Text = "Play Again";
             this.PlayAgainButton.UseVisualStyleBackColor = false;
             this.PlayAgainButton.Click += new System.EventHandler(this.PlayAgainButton_Click);
@@ -158,6 +163,7 @@
             this.GridOne.Name = "GridOne";
             this.GridOne.Size = new System.Drawing.Size(89, 84);
             this.GridOne.TabIndex = 4;
+            this.GridOne.TabStop = false;
             this.GridOne.UseVisualStyleBackColor = false;
             // 
             // GridTwo
@@ -170,6 +176,7 @@
             this.GridTwo.Name = "GridTwo";
             this.GridTwo.Size = new System.Drawing.Size(89, 84);
             this.GridTwo.TabIndex = 5;
+            this.GridTwo.TabStop = false;
             this.GridTwo.UseVisualStyleBackColor = false;
             // 
             // GridThree
@@ -182,6 +189,7 @@
             this.GridThree.Name = "GridThree";
             this.GridThree.Size = new System.Drawing.Size(89, 84);
             this.GridThree.TabIndex = 6;
+            this.GridThree.TabStop = false;
             this.GridThree.UseVisualStyleBackColor = false;
             // 
             // GridFour
@@ -194,6 +202,7 @@
             this.GridFour.Name = "GridFour";
             this.GridFour.Size = new System.Drawing.Size(89, 84);
             this.GridFour.TabIndex = 4;
+            this.GridFour.TabStop = false;
             this.GridFour.UseVisualStyleBackColor = false;
             // 
             // GridFive
@@ -206,6 +215,7 @@
             this.GridFive.Name = "GridFive";
             this.GridFive.Size = new System.Drawing.Size(89, 84);
             this.GridFive.TabIndex = 5;
+            this.GridFive.TabStop = false;
             this.GridFive.UseVisualStyleBackColor = false;
             // 
             // GridSix
@@ -218,6 +228,7 @@
             this.GridSix.Name = "GridSix";
             this.GridSix.Size = new System.Drawing.Size(89, 84);
             this.GridSix.TabIndex = 6;
+            this.GridSix.TabStop = false;
             this.GridSix.UseVisualStyleBackColor = false;
             // 
             // GridSeven
@@ -230,6 +241,7 @@
             this.GridSeven.Name = "GridSeven";
             this.GridSeven.Size = new System.Drawing.Size(90, 84);
             this.GridSeven.TabIndex = 4;
+            this.GridSeven.TabStop = false;
             this.GridSeven.UseVisualStyleBackColor = false;
             // 
             // GridEight
@@ -242,6 +254,7 @@
             this.GridEight.Name = "GridEight";
             this.GridEight.Size = new System.Drawing.Size(89, 84);
             this.GridEight.TabIndex = 5;
+            this.GridEight.TabStop = false;
             this.GridEight.UseVisualStyleBackColor = false;
             // 
             // GridNine
@@ -254,6 +267,7 @@
             this.GridNine.Name = "GridNine";
             this.GridNine.Size = new System.Drawing.Size(89, 84);
             this.GridNine.TabIndex = 6;
+            this.GridNine.TabStop = false;
             this.GridNine.UseVisualStyleBackColor = false;
             // 
             // GameForm
@@ -261,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(438, 473);
+            this.ClientSize = new System.Drawing.Size(438, 494);
             this.Controls.Add(this.GridNine);
             this.Controls.Add(this.GridSix);
             this.Controls.Add(this.GridThree);
