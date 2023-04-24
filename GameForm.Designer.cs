@@ -103,7 +103,7 @@
             this.SecondPlayerScore.Enabled = false;
             this.SecondPlayerScore.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondPlayerScore.ForeColor = System.Drawing.Color.IndianRed;
-            this.SecondPlayerScore.Location = new System.Drawing.Point(352, 56);
+            this.SecondPlayerScore.Location = new System.Drawing.Point(339, 56);
             this.SecondPlayerScore.Name = "SecondPlayerScore";
             this.SecondPlayerScore.Size = new System.Drawing.Size(35, 26);
             this.SecondPlayerScore.TabIndex = 1;
@@ -295,7 +295,7 @@
         private System.Windows.Forms.Label FirstPlayerLabel;
         private System.Windows.Forms.TextBox FirstPlayerScore;
         private System.Windows.Forms.Label ScoresLabel;
-        private System.Windows.Forms.Label SecondPlayerLabel;
+        internal System.Windows.Forms.Label SecondPlayerLabel;
         private System.Windows.Forms.TextBox SecondPlayerScore;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button PlayAgainButton;

@@ -81,6 +81,7 @@
             this.VersusPlayerButton.TabIndex = 2;
             this.VersusPlayerButton.Text = "Versus Player";
             this.VersusPlayerButton.UseVisualStyleBackColor = false;
+            this.VersusPlayerButton.Click += new System.EventHandler(this.VersusPlayerButton_Click);
             // 
             // HomeMenu
             // 
