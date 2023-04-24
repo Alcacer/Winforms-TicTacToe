@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Internal;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -8,6 +9,8 @@ namespace TicTacToe_with_Winforms
 {
     internal static class Program
     {
+        //Did it this way in order for the GameForm to be able to call up the home form.
+        internal static HomeMenu homeMenu;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +19,8 @@ namespace TicTacToe_with_Winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeMenu());
+            homeMenu = new HomeMenu();
+            Application.Run(homeMenu);
         }
     }
 }

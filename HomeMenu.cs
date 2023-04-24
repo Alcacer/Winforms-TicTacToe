@@ -21,6 +21,7 @@ namespace TicTacToe_with_Winforms
         {
             GameForm gameForm = new GameForm();
             gameForm.Show();
+            Hide();
         }
 
         private void VersusPlayerButton_Click(object sender, EventArgs e)
@@ -28,6 +29,7 @@ namespace TicTacToe_with_Winforms
             GameForm gameForm = new GameForm();
             gameForm.SecondPlayerLabel.Text = "Player Two:";
             gameForm.Show();
+            Hide();
         }
     }
 }
