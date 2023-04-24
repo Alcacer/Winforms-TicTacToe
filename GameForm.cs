@@ -16,5 +16,10 @@ namespace TicTacToe_with_Winforms
         {
             InitializeComponent();
         }
+
+        private void PlayAgainButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
