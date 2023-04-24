@@ -43,9 +43,9 @@
             this.FirstPlayerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
             this.FirstPlayerLabel.Location = new System.Drawing.Point(27, 71);
             this.FirstPlayerLabel.Name = "FirstPlayerLabel";
-            this.FirstPlayerLabel.Size = new System.Drawing.Size(110, 19);
+            this.FirstPlayerLabel.Size = new System.Drawing.Size(98, 19);
             this.FirstPlayerLabel.TabIndex = 0;
-            this.FirstPlayerLabel.Text = "PlayerName:";
+            this.FirstPlayerLabel.Text = "Player One:";
             // 
             // FirstPlayerScore
             // 
@@ -64,7 +64,7 @@
             this.ScoresLabel.AutoSize = true;
             this.ScoresLabel.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoresLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.ScoresLabel.Location = new System.Drawing.Point(209, 9);
+            this.ScoresLabel.Location = new System.Drawing.Point(165, 9);
             this.ScoresLabel.Name = "ScoresLabel";
             this.ScoresLabel.Size = new System.Drawing.Size(108, 31);
             this.ScoresLabel.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.SecondPlayerLabel.AutoSize = true;
             this.SecondPlayerLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondPlayerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.SecondPlayerLabel.Location = new System.Drawing.Point(319, 71);
+            this.SecondPlayerLabel.Location = new System.Drawing.Point(252, 71);
             this.SecondPlayerLabel.Name = "SecondPlayerLabel";
             this.SecondPlayerLabel.Size = new System.Drawing.Size(91, 19);
             this.SecondPlayerLabel.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.SecondPlayerScore.Enabled = false;
             this.SecondPlayerScore.Font = new System.Drawing.Font("Cambria Math", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondPlayerScore.ForeColor = System.Drawing.Color.Black;
-            this.SecondPlayerScore.Location = new System.Drawing.Point(429, 71);
+            this.SecondPlayerScore.Location = new System.Drawing.Point(362, 71);
             this.SecondPlayerScore.Name = "SecondPlayerScore";
             this.SecondPlayerScore.Size = new System.Drawing.Size(51, 26);
             this.SecondPlayerScore.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(540, 450);
+            this.ClientSize = new System.Drawing.Size(438, 450);
             this.Controls.Add(this.SecondPlayerScore);
             this.Controls.Add(this.FirstPlayerScore);
             this.Controls.Add(this.ScoresLabel);
