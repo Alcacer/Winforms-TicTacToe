@@ -17,16 +17,17 @@ namespace TicTacToe_with_Winforms
             InitializeComponent();
         }
 
+        internal static GameForm gameForm;
         private void VersusComButton_Click(object sender, EventArgs e)
         {
-            GameForm gameForm = new GameForm();
+            gameForm = new GameForm();
             gameForm.Show();
             Hide();
         }
 
         private void VersusPlayerButton_Click(object sender, EventArgs e)
         {
-            GameForm gameForm = new GameForm();
+            gameForm = new GameForm();
             gameForm.SecondPlayerLabel.Text = "Player Two:";
             gameForm.Show();
             Hide();

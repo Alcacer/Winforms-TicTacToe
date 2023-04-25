@@ -165,6 +165,7 @@
             this.GridOne.TabIndex = 4;
             this.GridOne.TabStop = false;
             this.GridOne.UseVisualStyleBackColor = false;
+            this.GridOne.Click += new System.EventHandler(this.GridOne_Click);
             // 
             // GridTwo
             // 
@@ -306,14 +307,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label FirstPlayerLabel;
+        internal System.Windows.Forms.Label FirstPlayerLabel;
         private System.Windows.Forms.TextBox FirstPlayerScore;
         private System.Windows.Forms.Label ScoresLabel;
         internal System.Windows.Forms.Label SecondPlayerLabel;
         private System.Windows.Forms.TextBox SecondPlayerScore;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button PlayAgainButton;
-        private System.Windows.Forms.Label PlayerIndicatorLabel;
         private System.Windows.Forms.Button GridOne;
         private System.Windows.Forms.Button GridTwo;
         private System.Windows.Forms.Button GridThree;
@@ -323,5 +323,6 @@
         private System.Windows.Forms.Button GridSeven;
         private System.Windows.Forms.Button GridEight;
         private System.Windows.Forms.Button GridNine;
+        internal System.Windows.Forms.Label PlayerIndicatorLabel;
     }
 }
