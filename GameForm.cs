@@ -16,7 +16,7 @@ namespace TicTacToe_with_Winforms
         {
             InitializeComponent();
         }
-
+        
         private void PlayAgainButton_Click(object sender, EventArgs e)
         {
             //TODO - Probable make an initial class that will store the initial image of the grid
@@ -38,7 +38,7 @@ namespace TicTacToe_with_Winforms
         }
         //Closes the hidded homemenu form if the gameform is closed without the back 
         //button being pressed.
-        private void gameFormClose(object sender, FormClosedEventArgs e)
+        private void GameFormClose(object sender, FormClosedEventArgs e)
         {
             if (closeReason == 'X')
             {

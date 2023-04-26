@@ -13,13 +13,9 @@ namespace TicTacToe_with_Winforms
 {
     internal class Turns
     {
-        static internal int sessions = 1;
-        static internal int turns = 1;
-        static internal bool firstPlayerTurn = true;
-
-        static GameForm labels = HomeMenu.gameForm;
-        readonly static string firstPlayerText = labels.FirstPlayerLabel.Text;
-        readonly static string secondPlayerText = labels.SecondPlayerLabel.Text;
+        internal static int sessions = 1;
+        internal static int turns = 1;
+        internal static bool firstPlayerTurn = true;
         internal static char GetTurn()
         {
             if (turns % 2 == 0)
@@ -45,14 +41,14 @@ namespace TicTacToe_with_Winforms
             {
                 if (sessions % 2 == 0)
                 {
-                    labels.PlayerIndicatorLabel.Text = 
-                        $"{secondPlayerText.Substring(0, secondPlayerText.Length - 1)} to play...";
+                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
+                        $"{HomeMenu.gameForm.SecondPlayerLabel.Text.Substring(0, HomeMenu.gameForm.SecondPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = false;
                 }
                 else
                 {
-                    labels.PlayerIndicatorLabel.Text =
-                        $"{firstPlayerText.Substring(0, firstPlayerText.Length - 1)} to play...";
+                    HomeMenu.gameForm.PlayerIndicatorLabel.Text =
+                        $"{HomeMenu.gameForm.FirstPlayerLabel.Text.Substring(0, HomeMenu.gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = true;
                 }
             }
@@ -60,14 +56,14 @@ namespace TicTacToe_with_Winforms
             {
                 if (firstPlayerTurn)
                 {
-                    labels.PlayerIndicatorLabel.Text = 
-                        $"{secondPlayerText.Substring(0, secondPlayerText.Length - 1)} to play..."; ;
+                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
+                        $"{HomeMenu.gameForm.SecondPlayerLabel.Text.Substring(0, HomeMenu.gameForm.SecondPlayerLabel.Text.Length - 1)} to play..."; ;
                     firstPlayerTurn = false;
                 }
                 else
                 {
-                    labels.PlayerIndicatorLabel.Text = 
-                        $"{firstPlayerText.Substring(0, firstPlayerText.Length - 1)} to play...";
+                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
+                        $"{HomeMenu.gameForm.FirstPlayerLabel.Text.Substring(0, HomeMenu.gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = true;
                 }
             }  
