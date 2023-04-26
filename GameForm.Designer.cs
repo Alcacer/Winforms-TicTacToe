@@ -300,6 +300,7 @@
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tic-Tac-Toe";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.gameFormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 
