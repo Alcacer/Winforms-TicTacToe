@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,14 @@ namespace TicTacToe_with_Winforms
             Turns.sessions = Turns.turns = 1;
             Turns.firstPlayerTurn = true;
         }
-        private void GridOne_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             Turns.SetTurnLabel();
-            GridOne.Text = Turns.GetTurn().ToString();
+            if (sender != null && sender is Button)
+            {
+                Button clickedButton = sender as Button;
+                clickedButton.Text = Turns.GetTurn().ToString();
+            }
         }
         //Closes the hidded homemenu form if the gameform is closed without the back 
         //button being pressed.

@@ -165,7 +165,7 @@
             this.GridOne.TabIndex = 4;
             this.GridOne.TabStop = false;
             this.GridOne.UseVisualStyleBackColor = false;
-            this.GridOne.Click += new System.EventHandler(this.GridOne_Click);
+            this.GridOne.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridTwo
             // 
@@ -179,6 +179,7 @@
             this.GridTwo.TabIndex = 5;
             this.GridTwo.TabStop = false;
             this.GridTwo.UseVisualStyleBackColor = false;
+            this.GridTwo.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridThree
             // 
@@ -192,6 +193,7 @@
             this.GridThree.TabIndex = 6;
             this.GridThree.TabStop = false;
             this.GridThree.UseVisualStyleBackColor = false;
+            this.GridThree.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridFour
             // 
@@ -205,6 +207,7 @@
             this.GridFour.TabIndex = 4;
             this.GridFour.TabStop = false;
             this.GridFour.UseVisualStyleBackColor = false;
+            this.GridFour.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridFive
             // 
@@ -218,6 +221,7 @@
             this.GridFive.TabIndex = 5;
             this.GridFive.TabStop = false;
             this.GridFive.UseVisualStyleBackColor = false;
+            this.GridFive.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridSix
             // 
@@ -231,6 +235,7 @@
             this.GridSix.TabIndex = 6;
             this.GridSix.TabStop = false;
             this.GridSix.UseVisualStyleBackColor = false;
+            this.GridSix.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridSeven
             // 
@@ -244,6 +249,7 @@
             this.GridSeven.TabIndex = 4;
             this.GridSeven.TabStop = false;
             this.GridSeven.UseVisualStyleBackColor = false;
+            this.GridSeven.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridEight
             // 
@@ -257,6 +263,7 @@
             this.GridEight.TabIndex = 5;
             this.GridEight.TabStop = false;
             this.GridEight.UseVisualStyleBackColor = false;
+            this.GridEight.Click += new System.EventHandler(this.Button_Click);
             // 
             // GridNine
             // 
@@ -270,6 +277,7 @@
             this.GridNine.TabIndex = 6;
             this.GridNine.TabStop = false;
             this.GridNine.UseVisualStyleBackColor = false;
+            this.GridNine.Click += new System.EventHandler(this.Button_Click);
             // 
             // GameForm
             // 
