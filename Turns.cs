@@ -17,6 +17,7 @@ namespace TicTacToe_with_Winforms
         internal static int sessions = 1;
         internal static int turns = 1;
         internal static bool firstPlayerTurn = true;
+        internal static bool gameOver = false; 
         internal static char GetTurn()
         {
             if (turns % 2 == 0)
@@ -54,39 +55,25 @@ namespace TicTacToe_with_Winforms
                 if (firstPlayerTurn)
                 {
                     SettingLabel(gameForm.SecondPlayerLabel, false);
-                    HorizontalChecks();
                 }
                 else
                 {
                     SettingLabel(gameForm.FirstPlayerLabel, true);
-                    HorizontalChecks();
                 }
             }
         }
         //To remove repetition of code.
         internal static void SettingLabel(System.Windows.Forms.Label label, bool status)
         {
-            
             gameForm.PlayerIndicatorLabel.Text =
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
+            HorizontalChecks();
         }
         internal static bool CheckWins(System.Windows.Forms.Button buttonOne,
             System.Windows.Forms.Button buttonTwo,
             System.Windows.Forms.Button buttonThree)
         {
-            ///<summary>
-            ///Basically, there are three ways to win, horisontally, vertically and diagonally.
-            ///In the horizontal alone, there are three paths to win, same with the vertical, 
-            ///while the diagonal has two. So that is 8 potential paths to a win.
-            ///Can I define a single function for all these permutations?
-            ///If in the function i pass in three arguments which are buttons of course, and i say
-            ///if the three buttons are equal, then we have a winner, and to return the text of that
-            ///button.
-            ///Horizontal: one two three; four five six; seven eight nine.
-            ///Vertical: one four seven; two five eight; three, six nine.
-            ///Horizontal: one five nine; three five seven
-            /// </summary>
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text 
                 && buttonOne.Text != "")
             {
@@ -105,7 +92,8 @@ namespace TicTacToe_with_Winforms
                 {
                     winner = gameForm.SecondPlayerLabel.Text.TrimEnd(':');
                 }
-                gameForm.PlayerIndicatorLabel.Text = $"The winner is {winner}";
+                gameForm.PlayerIndicatorLabel.Text = $"The winner is {winner}!";
+                gameOver = true;
                 return true;
             }
             return false;

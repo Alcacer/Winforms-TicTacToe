@@ -31,6 +31,7 @@ namespace TicTacToe_with_Winforms
             Program.homeMenu.Show(); //From the Program class.   
             Turns.sessions = Turns.turns = 1;
             Turns.firstPlayerTurn = true;
+            Turns.gameOver = false;
         }
         
         /// <summary>
@@ -49,6 +50,19 @@ namespace TicTacToe_with_Winforms
                 clickedButton.Text = Turns.GetTurn().ToString();
                 clickedButton.BackColor = Color.White;
                 Turns.SetTurnLabel();
+
+                //If the game is over...
+                if (Turns.gameOver)
+                {
+                    foreach(Control control in HomeMenu.gameForm.Controls)
+                    {
+                        if( control is Button && control.Text.Length < 2) 
+                        {
+                            control.Enabled = false; 
+                        }                            
+                    }
+                    PlayAgainButton.Enabled = true;
+                }
                 clickedButton.Enabled = false;                
             }
         }
