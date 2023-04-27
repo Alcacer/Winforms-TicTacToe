@@ -42,32 +42,31 @@ namespace TicTacToe_with_Winforms
             {
                 if (sessions % 2 == 0)
                 {
-                    gameForm.PlayerIndicatorLabel.Text = 
-                        $"{gameForm.SecondPlayerLabel.Text.Substring(0, gameForm.SecondPlayerLabel.Text.Length - 1)} to play...";
-                    firstPlayerTurn = false;
+                    SettingLabel(gameForm.SecondPlayerLabel, false);
                 }
                 else
                 {
-                    gameForm.PlayerIndicatorLabel.Text =
-                        $"{gameForm.FirstPlayerLabel.Text.Substring(0, gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
-                    firstPlayerTurn = true;
+                    SettingLabel(gameForm.FirstPlayerLabel, true);
                 }
             }
             else
             {
                 if (firstPlayerTurn)
                 {
-                    gameForm.PlayerIndicatorLabel.Text = 
-                        $"{gameForm.SecondPlayerLabel.Text.Substring(0, gameForm.SecondPlayerLabel.Text.Length - 1)} to play..."; ;
-                    firstPlayerTurn = false;
+                    SettingLabel(gameForm.SecondPlayerLabel, false);
                 }
                 else
                 {
-                    gameForm.PlayerIndicatorLabel.Text = 
-                        $"{gameForm.FirstPlayerLabel.Text.Substring(0, gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
-                    firstPlayerTurn = true;
+                    SettingLabel(gameForm.FirstPlayerLabel, true);
                 }
             }  
+        }
+        //To remove repetition of code.
+        internal static void SettingLabel(System.Windows.Forms.Label label, bool status)
+        {
+            gameForm.PlayerIndicatorLabel.Text =
+                        $"{label.Text.Substring(0, label.Text.Length - 1)} to play...";
+            firstPlayerTurn = status;
         }
     }
 }
