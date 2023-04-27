@@ -46,9 +46,9 @@ namespace TicTacToe_with_Winforms
             if (sender != null && sender is Button)
             {
                 Button clickedButton = sender as Button;
-                Turns.SetTurnLabel();
                 clickedButton.Text = Turns.GetTurn().ToString();
                 clickedButton.BackColor = Color.White;
+                Turns.SetTurnLabel();
                 clickedButton.Enabled = false;                
             }
         }
