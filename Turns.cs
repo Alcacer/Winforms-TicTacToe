@@ -68,7 +68,7 @@ namespace TicTacToe_with_Winforms
         {
             
             gameForm.PlayerIndicatorLabel.Text =
-                        $"{label.Text.Substring(0, label.Text.Length - 1)} to play...";
+                        $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
         internal static bool CheckWins(System.Windows.Forms.Button buttonOne,
@@ -96,7 +96,7 @@ namespace TicTacToe_with_Winforms
                 string winner;
                 if (sessions % 2 != 0 && buttonOne.Text == "X")
                 {
-                    winner = gameForm.FirstPlayerLabel.Text.Trim(':');
+                    winner = gameForm.FirstPlayerLabel.Text.TrimEnd(':');
                 }
                 else if(sessions % 2 == 0 && buttonOne.Text == "O") 
                 {
