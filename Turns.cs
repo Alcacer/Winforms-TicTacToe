@@ -32,37 +32,21 @@ namespace TicTacToe_with_Winforms
                 return 'X';
             }
         }
-
         /// <summary>
         /// The first condition is to set the PlayerIndicatorLabel at the start of a new 
         /// session.
         /// </summary>
         internal static void SetTurnLabel()
         {
-
-            if (sessions != 1 & turns == 1)
+            if (firstPlayerTurn)
             {
-                if (sessions % 2 == 0)
-                {
-                    SettingLabel(gameForm.SecondPlayerLabel, false);
-                }
-                else
-                {
-                    SettingLabel(gameForm.FirstPlayerLabel, true);
-                }
+                SettingLabel(gameForm.SecondPlayerLabel, false);
             }
             else
             {
-                if (firstPlayerTurn)
-                {
-                    SettingLabel(gameForm.SecondPlayerLabel, false);
-                }
-                else
-                {
-                    SettingLabel(gameForm.FirstPlayerLabel, true);
-                }
-                HorizontalChecks();
+                SettingLabel(gameForm.FirstPlayerLabel, true);
             }
+            HorizontalChecks();
         }
         //To remove repetition of code.
         internal static void SettingLabel(System.Windows.Forms.Label label, bool status)
@@ -97,14 +81,18 @@ namespace TicTacToe_with_Winforms
                     winner = gameForm.SecondPlayerLabel.Text.TrimEnd(':');
                     gameForm.SecondPlayerScore.Text = (Convert.ToInt16(gameForm.SecondPlayerScore.Text) + 1).ToString();
                 }
-                gameForm.PlayerIndicatorLabel.Text = $"{winner} wins!!";
+                gameForm.PlayerIndicatorLabel.Text = $"{winner} Wins!!!";
                 gameOver = true;
                 return true;
             }
             return false;
         }
         internal static void InitialGrid()
-        {   
+        {
+            sessions++;
+            turns = 1;
+            firstPlayerTurn = true;
+            gameOver = false;
             if (sessions % 2 == 0)
             {
                 SettingLabel(gameForm.SecondPlayerLabel, false);
@@ -121,10 +109,6 @@ namespace TicTacToe_with_Winforms
                     control.BackColor = Color.Silver;
                     control.Text = "";
                     control.Enabled = true;
-                    sessions++;
-                    turns = 1;
-                    firstPlayerTurn = true;
-                    gameOver = false;
                 }
             }
         }
