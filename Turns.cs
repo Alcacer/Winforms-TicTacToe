@@ -61,6 +61,7 @@ namespace TicTacToe_with_Winforms
                 {
                     SettingLabel(gameForm.FirstPlayerLabel, true);
                 }
+                HorizontalChecks();
             }
         }
         //To remove repetition of code.
@@ -69,7 +70,6 @@ namespace TicTacToe_with_Winforms
             gameForm.PlayerIndicatorLabel.Text =
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
-            HorizontalChecks();
         }
         internal static bool CheckWins(System.Windows.Forms.Button buttonOne,
             System.Windows.Forms.Button buttonTwo,
@@ -85,25 +85,37 @@ namespace TicTacToe_with_Winforms
                 if (sessions % 2 != 0 && buttonOne.Text == "X")
                 {
                     winner = gameForm.FirstPlayerLabel.Text.TrimEnd(':');
+                    gameForm.FirstPlayerScore.Text = (Convert.ToInt16(gameForm.FirstPlayerScore.Text) + 1).ToString();
                 }
                 else if(sessions % 2 == 0 && buttonOne.Text == "O") 
                 {
                     winner = gameForm.FirstPlayerLabel.Text.TrimEnd(':');
-                }else
+                    gameForm.FirstPlayerScore.Text = (Convert.ToInt16(gameForm.FirstPlayerScore.Text) + 1).ToString();
+                }
+                else
                 {
                     winner = gameForm.SecondPlayerLabel.Text.TrimEnd(':');
+                    gameForm.SecondPlayerScore.Text = (Convert.ToInt16(gameForm.SecondPlayerScore.Text) + 1).ToString();
                 }
-                gameForm.PlayerIndicatorLabel.Text = $"The winner is {winner}!";
+                gameForm.PlayerIndicatorLabel.Text = $"{winner} wins!!";
                 gameOver = true;
                 return true;
             }
             return false;
         }
         internal static void InitialGrid()
-        {
+        {   
+            if (sessions % 2 == 0)
+            {
+                SettingLabel(gameForm.SecondPlayerLabel, false);
+            }
+            else
+            {
+                SettingLabel(gameForm.FirstPlayerLabel, true);
+            }
+            
             foreach (Control control in gameForm.Controls)
             {
-                SetTurnLabel();
                 if (control is System.Windows.Forms.Button && control.Text.Length < 2)
                 {
                     control.BackColor = Color.Silver;

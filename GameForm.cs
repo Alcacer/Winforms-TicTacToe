@@ -19,9 +19,7 @@ namespace TicTacToe_with_Winforms
         }
         
         private void PlayAgainButton_Click(object sender, EventArgs e)
-        {
-            //TODO - Probable make an initial class that will store the initial image of the grid
-            //and this button would just load that up.
+        { 
             Turns.InitialGrid();
             PlayAgainButton.Enabled = false;
         }
@@ -65,7 +63,7 @@ namespace TicTacToe_with_Winforms
                     }
                     PlayAgainButton.Enabled = true;
                 }
-                clickedButton.Enabled = false;                
+                clickedButton.Enabled = false;
             }
         }
         //Closes the hidden homemenu form if the gameform is closed without the back 
