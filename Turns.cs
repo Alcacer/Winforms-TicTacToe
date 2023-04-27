@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -77,9 +78,9 @@ namespace TicTacToe_with_Winforms
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text 
                 && buttonOne.Text != "")
             {
-                buttonOne.BackColor = System.Drawing.Color.Red;
-                buttonTwo.BackColor = System.Drawing.Color.Red;
-                buttonThree.BackColor = System.Drawing.Color.Red;
+                buttonOne.BackColor = Color.Red;
+                buttonTwo.BackColor = Color.Red;
+                buttonThree.BackColor = Color.Red;
                 string winner;
                 if (sessions % 2 != 0 && buttonOne.Text == "X")
                 {
@@ -97,6 +98,23 @@ namespace TicTacToe_with_Winforms
                 return true;
             }
             return false;
+        }
+        internal static void InitialGrid()
+        {
+            foreach (Control control in gameForm.Controls)
+            {
+                SetTurnLabel();
+                if (control is System.Windows.Forms.Button && control.Text.Length < 2)
+                {
+                    control.BackColor = Color.Silver;
+                    control.Text = "";
+                    control.Enabled = true;
+                    sessions++;
+                    turns = 1;
+                    firstPlayerTurn = true;
+                    gameOver = false;
+                }
+            }
         }
         internal static void HorizontalChecks()
         {

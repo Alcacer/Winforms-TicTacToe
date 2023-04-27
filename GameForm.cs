@@ -22,6 +22,8 @@ namespace TicTacToe_with_Winforms
         {
             //TODO - Probable make an initial class that will store the initial image of the grid
             //and this button would just load that up.
+            Turns.InitialGrid();
+            PlayAgainButton.Enabled = false;
         }
         private char closeReason = 'X';
         private void BackButton_Click(object sender, EventArgs e)
