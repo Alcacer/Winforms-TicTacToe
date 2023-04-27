@@ -46,8 +46,25 @@ namespace TicTacToe_with_Winforms
             {
                 SettingLabel(gameForm.FirstPlayerLabel, true);
             }
-            HorizontalChecks();
+
+            if (turns > 5)
+            {
+                //Check Horizontal wins
+                CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
+                CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
+                CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
+
+                //Check Vertical wins
+                CheckWins(gameForm.GridOne, gameForm.GridFour, gameForm.GridSeven);
+                CheckWins(gameForm.GridTwo, gameForm.GridFive, gameForm.GridEight);
+                CheckWins(gameForm.GridThree, gameForm.GridSix, gameForm.GridNine);
+
+                //Check Diagonal wins
+                CheckWins(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
+                CheckWins(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
+            }
         }
+
         //To remove repetition of code.
         internal static void SettingLabel(System.Windows.Forms.Label label, bool status)
         {
@@ -55,7 +72,7 @@ namespace TicTacToe_with_Winforms
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
-        internal static bool CheckWins(System.Windows.Forms.Button buttonOne,
+        internal static void CheckWins(System.Windows.Forms.Button buttonOne,
             System.Windows.Forms.Button buttonTwo,
             System.Windows.Forms.Button buttonThree)
         {
@@ -83,9 +100,7 @@ namespace TicTacToe_with_Winforms
                 }
                 gameForm.PlayerIndicatorLabel.Text = $"{winner} Wins!!!";
                 gameOver = true;
-                return true;
             }
-            return false;
         }
         internal static void InitialGrid()
         {
@@ -112,18 +127,6 @@ namespace TicTacToe_with_Winforms
                 }
             }
         }
-        internal static void HorizontalChecks()
-        {
-            bool horizontalOne = CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
-            bool horizontalTwo = CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
-            bool horizontalThree = CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
 
-            bool verticalOne = CheckWins(gameForm.GridOne, gameForm.GridFour, gameForm.GridSeven);
-            bool verticalTwo = CheckWins(gameForm.GridTwo, gameForm.GridFive, gameForm.GridEight);
-            bool verticalThree = CheckWins(gameForm.GridThree, gameForm.GridSix, gameForm.GridNine);
-
-            bool diagonalOne = CheckWins(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
-            bool diagonalTwo = CheckWins(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
-        }
     }
 }
