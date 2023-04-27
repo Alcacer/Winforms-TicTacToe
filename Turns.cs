@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static TicTacToe_with_Winforms.HomeMenu;
 
 namespace TicTacToe_with_Winforms
 {
@@ -41,14 +42,14 @@ namespace TicTacToe_with_Winforms
             {
                 if (sessions % 2 == 0)
                 {
-                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
-                        $"{HomeMenu.gameForm.SecondPlayerLabel.Text.Substring(0, HomeMenu.gameForm.SecondPlayerLabel.Text.Length - 1)} to play...";
+                    gameForm.PlayerIndicatorLabel.Text = 
+                        $"{gameForm.SecondPlayerLabel.Text.Substring(0, gameForm.SecondPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = false;
                 }
                 else
                 {
-                    HomeMenu.gameForm.PlayerIndicatorLabel.Text =
-                        $"{HomeMenu.gameForm.FirstPlayerLabel.Text.Substring(0, HomeMenu.gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
+                    gameForm.PlayerIndicatorLabel.Text =
+                        $"{gameForm.FirstPlayerLabel.Text.Substring(0, gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = true;
                 }
             }
@@ -56,14 +57,14 @@ namespace TicTacToe_with_Winforms
             {
                 if (firstPlayerTurn)
                 {
-                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
-                        $"{HomeMenu.gameForm.SecondPlayerLabel.Text.Substring(0, HomeMenu.gameForm.SecondPlayerLabel.Text.Length - 1)} to play..."; ;
+                    gameForm.PlayerIndicatorLabel.Text = 
+                        $"{gameForm.SecondPlayerLabel.Text.Substring(0, gameForm.SecondPlayerLabel.Text.Length - 1)} to play..."; ;
                     firstPlayerTurn = false;
                 }
                 else
                 {
-                    HomeMenu.gameForm.PlayerIndicatorLabel.Text = 
-                        $"{HomeMenu.gameForm.FirstPlayerLabel.Text.Substring(0, HomeMenu.gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
+                    gameForm.PlayerIndicatorLabel.Text = 
+                        $"{gameForm.FirstPlayerLabel.Text.Substring(0, gameForm.FirstPlayerLabel.Text.Length - 1)} to play...";
                     firstPlayerTurn = true;
                 }
             }  

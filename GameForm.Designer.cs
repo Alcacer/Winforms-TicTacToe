@@ -317,21 +317,21 @@
         #endregion
 
         internal System.Windows.Forms.Label FirstPlayerLabel;
-        private System.Windows.Forms.TextBox FirstPlayerScore;
+        internal System.Windows.Forms.TextBox FirstPlayerScore;
         private System.Windows.Forms.Label ScoresLabel;
         internal System.Windows.Forms.Label SecondPlayerLabel;
-        private System.Windows.Forms.TextBox SecondPlayerScore;
+        internal System.Windows.Forms.TextBox SecondPlayerScore;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button PlayAgainButton;
-        private System.Windows.Forms.Button GridOne;
-        private System.Windows.Forms.Button GridTwo;
-        private System.Windows.Forms.Button GridThree;
-        private System.Windows.Forms.Button GridFour;
-        private System.Windows.Forms.Button GridFive;
-        private System.Windows.Forms.Button GridSix;
-        private System.Windows.Forms.Button GridSeven;
-        private System.Windows.Forms.Button GridEight;
-        private System.Windows.Forms.Button GridNine;
+        internal System.Windows.Forms.Button GridOne;
+        internal System.Windows.Forms.Button GridTwo;
+        internal System.Windows.Forms.Button GridThree;
+        internal System.Windows.Forms.Button GridFour;
+        internal System.Windows.Forms.Button GridFive;
+        internal System.Windows.Forms.Button GridSix;
+        internal System.Windows.Forms.Button GridSeven;
+        internal System.Windows.Forms.Button GridEight;
+        internal System.Windows.Forms.Button GridNine;
         internal System.Windows.Forms.Label PlayerIndicatorLabel;
     }
 }

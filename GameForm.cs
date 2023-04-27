@@ -32,16 +32,27 @@ namespace TicTacToe_with_Winforms
             Turns.sessions = Turns.turns = 1;
             Turns.firstPlayerTurn = true;
         }
+        
+        /// <summary>
+        /// This function is for all the buttons on the grid and is passed into all the buttons' 
+        /// event handlers in the partial class. When a button is pressed, the sender stores the 
+        /// button that is pressed and sets the text of the button. The button is disabled after
+        /// the button is pressed to avoid changing the first inputed value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, EventArgs e)
         {
-            Turns.SetTurnLabel();
             if (sender != null && sender is Button)
             {
                 Button clickedButton = sender as Button;
+                Turns.SetTurnLabel();
                 clickedButton.Text = Turns.GetTurn().ToString();
+                clickedButton.BackColor = Color.White;
+                clickedButton.Enabled = false;                
             }
         }
-        //Closes the hidded homemenu form if the gameform is closed without the back 
+        //Closes the hidden homemenu form if the gameform is closed without the back 
         //button being pressed.
         private void GameFormClose(object sender, FormClosedEventArgs e)
         {
