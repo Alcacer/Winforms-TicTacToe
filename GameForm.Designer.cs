@@ -145,11 +145,11 @@
             // PlayerIndicatorLabel
             // 
             this.PlayerIndicatorLabel.AutoSize = true;
-            this.PlayerIndicatorLabel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerIndicatorLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerIndicatorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(28)))), ((int)(((byte)(31)))));
-            this.PlayerIndicatorLabel.Location = new System.Drawing.Point(129, 102);
+            this.PlayerIndicatorLabel.Location = new System.Drawing.Point(131, 101);
             this.PlayerIndicatorLabel.Name = "PlayerIndicatorLabel";
-            this.PlayerIndicatorLabel.Size = new System.Drawing.Size(175, 16);
+            this.PlayerIndicatorLabel.Size = new System.Drawing.Size(180, 19);
             this.PlayerIndicatorLabel.TabIndex = 0;
             this.PlayerIndicatorLabel.Text = "Player One to play...";
             // 

@@ -36,7 +36,7 @@ namespace TicTacToe_with_Winforms
         /// The first condition is to set the PlayerIndicatorLabel at the start of a new 
         /// session.
         /// </summary>
-        internal static void SetTurnLabel()
+        internal static void MainFunction()
         {
             if (firstPlayerTurn)
             {

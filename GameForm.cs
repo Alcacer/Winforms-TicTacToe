@@ -49,7 +49,7 @@ namespace TicTacToe_with_Winforms
                 Button clickedButton = sender as Button;
                 clickedButton.Text = Turns.GetTurn().ToString();
                 clickedButton.BackColor = Color.White;
-                Turns.SetTurnLabel();
+                Turns.MainFunction();
 
                 //If the game is over...
                 if (Turns.gameOver)
