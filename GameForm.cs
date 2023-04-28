@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static TicTacToe_with_Winforms.HomeMenu;
 
 namespace TicTacToe_with_Winforms
 {
@@ -33,12 +33,14 @@ namespace TicTacToe_with_Winforms
             Turns.firstPlayerTurn = true;
             Turns.gameOver = false;
         }
-        
+
         /// <summary>
         /// This function is for all the buttons on the grid and is passed into all the buttons' 
         /// event handlers in the partial class. When a button is pressed, the sender stores the 
         /// button that is pressed and sets the text of the button. The button is disabled after
         /// the button is pressed to avoid changing the first inputed value.
+        /// In the same vein, that is the same thing that i want to do to the people of oz.
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,7 +56,7 @@ namespace TicTacToe_with_Winforms
                 //If the game is over...
                 if (Turns.gameOver)
                 {
-                    foreach(Control control in HomeMenu.gameForm.Controls)
+                    foreach(Control control in gameForm.Controls)
                     {
                         if( control is Button && control.Text.Length < 2) 
                         {
@@ -64,6 +66,11 @@ namespace TicTacToe_with_Winforms
                     PlayAgainButton.Enabled = true;
                 }
                 clickedButton.Enabled = false;
+                Turns.buttons.Remove(clickedButton);
+                if (computerMode && Turns.buttons.Count > 0) 
+                {
+                    Turns.ComputerClick(Turns.buttons, Turns.random); 
+                }
             }
         }
         //Closes the hidden homemenu form if the gameform is closed without the back 

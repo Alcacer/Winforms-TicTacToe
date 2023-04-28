@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static TicTacToe_with_Winforms.HomeMenu;
 
 namespace TicTacToe_with_Winforms
@@ -18,7 +17,11 @@ namespace TicTacToe_with_Winforms
         internal static int sessions = 1;
         internal static int turns = 1;
         internal static bool firstPlayerTurn = true;
-        internal static bool gameOver = false; 
+        internal static bool gameOver = false;
+        internal static Random random = new Random();
+        internal static List<Button> buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
+                                                          gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
+                                                          gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
         internal static char GetTurn()
         {
             if (turns % 2 == 0)
@@ -66,15 +69,13 @@ namespace TicTacToe_with_Winforms
         }
 
         //To remove repetition of code.
-        internal static void SettingLabel(System.Windows.Forms.Label label, bool status)
+        internal static void SettingLabel(Label label, bool status)
         {
             gameForm.PlayerIndicatorLabel.Text =
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
-        internal static void CheckWins(System.Windows.Forms.Button buttonOne,
-            System.Windows.Forms.Button buttonTwo,
-            System.Windows.Forms.Button buttonThree)
+        internal static void CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text 
                 && buttonOne.Text != "")
@@ -108,25 +109,40 @@ namespace TicTacToe_with_Winforms
             turns = 1;
             firstPlayerTurn = true;
             gameOver = false;
-            if (sessions % 2 == 0)
-            {
-                SettingLabel(gameForm.SecondPlayerLabel, false);
-            }
-            else
-            {
-                SettingLabel(gameForm.FirstPlayerLabel, true);
-            }
-            
+            buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
+                                         gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
+                                         gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
+
             foreach (Control control in gameForm.Controls)
             {
-                if (control is System.Windows.Forms.Button && control.Text.Length < 2)
+                if (control is Button && control.Text.Length < 2)
                 {
                     control.BackColor = Color.Silver;
                     control.Text = "";
                     control.Enabled = true;
                 }
             }
+            if (sessions % 2 == 0)
+            {
+                SettingLabel(gameForm.SecondPlayerLabel, false);
+                ComputerClick(buttons, random);
+            }
+            else
+            {
+                SettingLabel(gameForm.FirstPlayerLabel, true);
+            }
         }
-
+        internal static void ComputerClick(List<Button> buttonList, Random random)
+        {
+            if ((sessions % 2 != 0 && turns % 2 == 0) || (sessions % 2 == 0 && turns % 2 != 0))
+            {
+                int index = random.Next(buttonList.Count);
+                Button computerChoice = buttonList[index];
+                computerChoice.PerformClick();
+                buttonList.Remove(computerChoice);
+            }
+            
+        }
     }
+    
 }
