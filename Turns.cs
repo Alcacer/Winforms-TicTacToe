@@ -125,7 +125,10 @@ namespace TicTacToe_with_Winforms
             if (sessions % 2 == 0)
             {
                 SettingLabel(gameForm.SecondPlayerLabel, false);
-                ComputerClick(buttons, random);
+                if (computerMode)
+                { 
+                    ComputerClick(buttons, random); 
+                }
             }
             else
             {
