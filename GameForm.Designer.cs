@@ -151,7 +151,15 @@
             this.PlayerIndicatorLabel.Name = "PlayerIndicatorLabel";
             this.PlayerIndicatorLabel.Size = new System.Drawing.Size(180, 19);
             this.PlayerIndicatorLabel.TabIndex = 0;
-            this.PlayerIndicatorLabel.Text = "Player One to play...";
+            if (HomeMenu.computerMode)
+            {
+                this.PlayerIndicatorLabel.Text = "Player One is X!";
+            }
+            else 
+            { 
+                this.PlayerIndicatorLabel.Text = "Player One to play..."; 
+            }
+            
             // 
             // GridOne
             // 

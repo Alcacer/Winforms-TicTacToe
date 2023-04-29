@@ -34,13 +34,16 @@ namespace TicTacToe_with_Winforms
         
         internal static void MainFunction()
         {
-            if (firstPlayerTurn)
+            if (!computerMode)
             {
-                SettingLabel(gameForm.SecondPlayerLabel, false);
-            }
-            else
-            {
-                SettingLabel(gameForm.FirstPlayerLabel, true);
+                if (firstPlayerTurn)
+                {
+                    SettingLabel(gameForm.SecondPlayerLabel, false);
+                }
+                else
+                {
+                    SettingLabel(gameForm.FirstPlayerLabel, true);
+                }
             }
 
             if (turns > 5)
@@ -92,9 +95,15 @@ namespace TicTacToe_with_Winforms
                     winner = gameForm.SecondPlayerLabel.Text.TrimEnd(':');
                     gameForm.SecondPlayerScore.Text = (Convert.ToInt16(gameForm.SecondPlayerScore.Text) + 1).ToString();
                 }
-                gameForm.PlayerIndicatorLabel.Text = $"{winner} Wins!!!";
+                gameForm.PlayerIndicatorLabel.Text = $"{winner} [{buttonOne.Text}] Wins!!!";
                 gameOver = true;
             }
+        }
+        internal static void ComputerClick(List<Button> buttonList, Random random)
+        {
+            int index = random.Next(buttonList.Count);
+            Button computerChoice = buttonList[index];
+            computerChoice.PerformClick();
         }
         internal static void InitialGrid()
         {
@@ -114,23 +123,27 @@ namespace TicTacToe_with_Winforms
             }
             if (sessions % 2 == 0)
             {
-                SettingLabel(gameForm.SecondPlayerLabel, false);
                 if (computerMode)
                 {
-                    System.Threading.Thread.Sleep(700);
+                    gameForm.PlayerIndicatorLabel.Text = $"{gameForm.SecondPlayerLabel.Text.TrimEnd(':')} is now X!";
                     ComputerClick(GameForm.buttons, GameForm.random); 
+                }
+                else
+                {
+                    SettingLabel(gameForm.SecondPlayerLabel, false);
                 }
             }
             else
             {
-                SettingLabel(gameForm.FirstPlayerLabel, true);
+                if (computerMode)
+                {
+                    gameForm.PlayerIndicatorLabel.Text = $"{gameForm.FirstPlayerLabel.Text.TrimEnd(':')} is X!";
+                }
+                else
+                {
+                    SettingLabel(gameForm.FirstPlayerLabel, true);
+                }
             }
-        }
-        internal static void ComputerClick(List<Button> buttonList, Random random)
-        {
-            int index = random.Next(buttonList.Count);
-            Button computerChoice = buttonList[index];
-            computerChoice.PerformClick();
         }
     }
     

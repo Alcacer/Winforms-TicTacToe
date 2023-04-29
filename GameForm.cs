@@ -49,7 +49,7 @@ namespace TicTacToe_with_Winforms
 
         private void Button_Click(object sender, EventArgs e)
         {
-            if (Turns.turns == 1) 
+            if (Turns.turns == 1 && Turns.sessions == 1) 
             {
                 buttons = new List<Button> { GridOne, GridTwo,GridThree,
                                          GridFour, GridFive, GridSix,
@@ -76,7 +76,7 @@ namespace TicTacToe_with_Winforms
                 //If the game is a draw...
                 if (buttons.Count == 0 && !Turns.gameOver)
                 {
-                    PlayerIndicatorLabel.Text = "It is a Draw!";
+                    PlayerIndicatorLabel.Text = "This Match is a Draw!";
                     PlayAgainButton.Enabled = true;
                 }
                 if (computerMode && buttons.Count > 0 && !Turns.gameOver) 

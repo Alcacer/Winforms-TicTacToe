@@ -21,8 +21,8 @@ namespace TicTacToe_with_Winforms
         internal static bool computerMode;
         private void VersusComButton_Click(object sender, EventArgs e)
         {
-            gameForm = new GameForm();
             computerMode = true;
+            gameForm = new GameForm();
             gameForm.Show();
             Hide();
             
@@ -30,8 +30,8 @@ namespace TicTacToe_with_Winforms
 
         private void VersusPlayerButton_Click(object sender, EventArgs e)
         {
-            gameForm = new GameForm();
             computerMode = false;
+            gameForm = new GameForm();
             gameForm.SecondPlayerLabel.Text = "Player Two:";
             gameForm.Show();
             Hide();
