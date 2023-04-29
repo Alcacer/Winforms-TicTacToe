@@ -44,6 +44,7 @@ namespace TicTacToe_with_Winforms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        internal static Random random = new Random();
         private void Button_Click(object sender, EventArgs e)
         {
             if (sender != null && sender is Button)
@@ -69,7 +70,7 @@ namespace TicTacToe_with_Winforms
                 Turns.buttons.Remove(clickedButton);
                 if (computerMode && Turns.buttons.Count > 0) 
                 {
-                    Turns.ComputerClick(Turns.buttons, Turns.random); 
+                    Turns.ComputerClick(Turns.buttons, random); 
                 }
             }
         }

@@ -18,7 +18,7 @@ namespace TicTacToe_with_Winforms
         internal static int turns = 1;
         internal static bool firstPlayerTurn = true;
         internal static bool gameOver = false;
-        internal static Random random = new Random();
+        
         internal static List<Button> buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
                                                           gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
                                                           gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
@@ -65,6 +65,11 @@ namespace TicTacToe_with_Winforms
                 //Check Diagonal wins
                 CheckWins(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
                 CheckWins(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
+            }
+            if (buttons.Count == 0)
+            {
+                gameForm.PlayerIndicatorLabel.Text = "It is a Draw!";
+                gameForm.PlayAgainButton.Enabled = true;
             }
         }
 
@@ -127,7 +132,7 @@ namespace TicTacToe_with_Winforms
                 SettingLabel(gameForm.SecondPlayerLabel, false);
                 if (computerMode)
                 { 
-                    ComputerClick(buttons, random); 
+                    ComputerClick(buttons, GameForm.random); 
                 }
             }
             else
