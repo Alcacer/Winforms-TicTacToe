@@ -32,9 +32,6 @@ namespace TicTacToe_with_Winforms
             Turns.sessions = Turns.turns = 1;
             Turns.firstPlayerTurn = true;
             Turns.gameOver = false;
-            Turns.buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
-                                         gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
-                                         gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
         }
 
         /// <summary>
@@ -42,14 +39,22 @@ namespace TicTacToe_with_Winforms
         /// event handlers in the partial class. When a button is pressed, the sender stores the 
         /// button that is pressed and sets the text of the button. The button is disabled after
         /// the button is pressed to avoid changing the first inputed value.
-        /// In the same vein, that is the same thing that i want to do to the people of oz.
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         internal static Random random = new Random();
+        internal static List<Button> buttons;
+
         private void Button_Click(object sender, EventArgs e)
         {
+            if (Turns.turns == 1) 
+            {
+                buttons = new List<Button> { GridOne, GridTwo,GridThree,
+                                         GridFour, GridFive, GridSix,
+                                         GridSeven, GridEight, GridNine};
+            }
             if (sender != null && sender is Button)
             {
                 Button clickedButton = sender as Button;
@@ -60,23 +65,28 @@ namespace TicTacToe_with_Winforms
                 //If the game is over...
                 if (Turns.gameOver)
                 {
-                    foreach(Button button in Turns.buttons)
+                    foreach(Button button in buttons)
                     {
                         button.Enabled = false;                             
                     }
                     PlayAgainButton.Enabled = true;
                 }
                 clickedButton.Enabled = false;
-                Turns.buttons.Remove(clickedButton);
-                //Draw functionality
-                if (Turns.buttons.Count == 0 && !Turns.gameOver)
+                buttons.Remove(clickedButton);
+
+                //If the game is a draw...
+                if (buttons.Count == 0 && !Turns.gameOver)
                 {
                     PlayerIndicatorLabel.Text = "It is a Draw!";
                     PlayAgainButton.Enabled = true;
                 }
-                if (computerMode && Turns.buttons.Count > 0) 
+                if (computerMode && buttons.Count > 0) 
                 {
-                    Turns.ComputerClick(Turns.buttons, random); 
+                    if ((Turns.sessions % 2 != 0 && Turns.turns % 2 == 0) || 
+                        (Turns.sessions % 2 == 0 && Turns.turns % 2 != 0))
+                    {
+                        Turns.ComputerClick(buttons, random);
+                    }
                 }
             }
         }

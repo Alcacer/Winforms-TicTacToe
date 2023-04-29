@@ -18,10 +18,6 @@ namespace TicTacToe_with_Winforms
         internal static int turns = 1;
         internal static bool firstPlayerTurn = true;
         internal static bool gameOver = false;
-        
-        internal static List<Button> buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
-                                                          gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
-                                                          gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
         internal static char GetTurn()
         {
             if (turns % 2 == 0)
@@ -35,10 +31,7 @@ namespace TicTacToe_with_Winforms
                 return 'X';
             }
         }
-        /// <summary>
-        /// The first condition is to set the PlayerIndicatorLabel at the start of a new 
-        /// session.
-        /// </summary>
+        
         internal static void MainFunction()
         {
             if (firstPlayerTurn)
@@ -109,11 +102,11 @@ namespace TicTacToe_with_Winforms
             turns = 1;
             firstPlayerTurn = true;
             gameOver = false;
-            buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
+            GameForm.buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
                                          gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
                                          gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
 
-            foreach (Button button in buttons)
+            foreach (Button button in GameForm.buttons)
             {
                 button.BackColor = Color.Silver;
                 button.Text = "";
@@ -124,7 +117,7 @@ namespace TicTacToe_with_Winforms
                 SettingLabel(gameForm.SecondPlayerLabel, false);
                 if (computerMode)
                 { 
-                    ComputerClick(buttons, GameForm.random); 
+                    ComputerClick(GameForm.buttons, GameForm.random); 
                 }
             }
             else
@@ -134,14 +127,10 @@ namespace TicTacToe_with_Winforms
         }
         internal static void ComputerClick(List<Button> buttonList, Random random)
         {
-            if ((sessions % 2 != 0 && turns % 2 == 0) || (sessions % 2 == 0 && turns % 2 != 0))
-            {
-                int index = random.Next(buttonList.Count);
-                Button computerChoice = buttonList[index];
-                computerChoice.PerformClick();
-                buttonList.Remove(computerChoice);
-            }
-            
+            int index = random.Next(buttonList.Count);
+            Button computerChoice = buttonList[index];
+            computerChoice.PerformClick();
+            buttonList.Remove(computerChoice);
         }
     }
     
