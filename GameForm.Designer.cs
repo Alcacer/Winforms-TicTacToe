@@ -322,7 +322,6 @@
         internal System.Windows.Forms.Label SecondPlayerLabel;
         internal System.Windows.Forms.TextBox SecondPlayerScore;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button PlayAgainButton;
         internal System.Windows.Forms.Button GridOne;
         internal System.Windows.Forms.Button GridTwo;
         internal System.Windows.Forms.Button GridThree;
@@ -333,5 +332,6 @@
         internal System.Windows.Forms.Button GridEight;
         internal System.Windows.Forms.Button GridNine;
         internal System.Windows.Forms.Label PlayerIndicatorLabel;
+        internal System.Windows.Forms.Button PlayAgainButton;
     }
 }

@@ -66,11 +66,6 @@ namespace TicTacToe_with_Winforms
                 CheckWins(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
                 CheckWins(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
             }
-            if (buttons.Count == 0)
-            {
-                gameForm.PlayerIndicatorLabel.Text = "It is a Draw!";
-                gameForm.PlayAgainButton.Enabled = true;
-            }
         }
 
         //To remove repetition of code.

@@ -32,6 +32,9 @@ namespace TicTacToe_with_Winforms
             Turns.sessions = Turns.turns = 1;
             Turns.firstPlayerTurn = true;
             Turns.gameOver = false;
+            Turns.buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
+                                         gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
+                                         gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
         }
 
         /// <summary>
@@ -68,6 +71,12 @@ namespace TicTacToe_with_Winforms
                 }
                 clickedButton.Enabled = false;
                 Turns.buttons.Remove(clickedButton);
+                //Draw functionality
+                if (Turns.buttons.Count == 0 && !Turns.gameOver)
+                {
+                    PlayerIndicatorLabel.Text = "It is a Draw!";
+                    PlayAgainButton.Enabled = true;
+                }
                 if (computerMode && Turns.buttons.Count > 0) 
                 {
                     Turns.ComputerClick(Turns.buttons, random); 
