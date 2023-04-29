@@ -61,7 +61,8 @@ namespace TicTacToe_with_Winforms
                 clickedButton.Text = Turns.GetTurn().ToString();
                 clickedButton.BackColor = Color.White;
                 Turns.MainFunction();
-
+                clickedButton.Enabled = false;
+                buttons.Remove(clickedButton);
                 //If the game is over...
                 if (Turns.gameOver)
                 {
@@ -71,8 +72,6 @@ namespace TicTacToe_with_Winforms
                     }
                     PlayAgainButton.Enabled = true;
                 }
-                clickedButton.Enabled = false;
-                buttons.Remove(clickedButton);
 
                 //If the game is a draw...
                 if (buttons.Count == 0 && !Turns.gameOver)
@@ -80,7 +79,7 @@ namespace TicTacToe_with_Winforms
                     PlayerIndicatorLabel.Text = "It is a Draw!";
                     PlayAgainButton.Enabled = true;
                 }
-                if (computerMode && buttons.Count > 0) 
+                if (computerMode && buttons.Count > 0 && !Turns.gameOver) 
                 {
                     if ((Turns.sessions % 2 != 0 && Turns.turns % 2 == 0) || 
                         (Turns.sessions % 2 == 0 && Turns.turns % 2 != 0))

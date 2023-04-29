@@ -46,9 +46,9 @@ namespace TicTacToe_with_Winforms
             if (turns > 5)
             {
                 //Check Horizontal wins
-                CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
-                CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
-                CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
+                if (CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree)){}
+                else if(CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix)){}
+                else if (CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine)){}
 
                 //Check Vertical wins
                 CheckWins(gameForm.GridOne, gameForm.GridFour, gameForm.GridSeven);
@@ -68,7 +68,7 @@ namespace TicTacToe_with_Winforms
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
-        internal static void CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
+        internal static bool CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text 
                 && buttonOne.Text != "")
@@ -93,8 +93,8 @@ namespace TicTacToe_with_Winforms
                     gameForm.SecondPlayerScore.Text = (Convert.ToInt16(gameForm.SecondPlayerScore.Text) + 1).ToString();
                 }
                 gameForm.PlayerIndicatorLabel.Text = $"{winner} Wins!!!";
-                gameOver = true;
-            }
+                return gameOver = true;
+            }return false;
         }
         internal static void InitialGrid()
         {
@@ -104,7 +104,7 @@ namespace TicTacToe_with_Winforms
             gameOver = false;
             GameForm.buttons = new List<Button> { gameForm.GridOne, gameForm.GridTwo,gameForm.GridThree,
                                          gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
-                                         gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
+                                         gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine };
 
             foreach (Button button in GameForm.buttons)
             {
@@ -130,7 +130,6 @@ namespace TicTacToe_with_Winforms
             int index = random.Next(buttonList.Count);
             Button computerChoice = buttonList[index];
             computerChoice.PerformClick();
-            buttonList.Remove(computerChoice);
         }
     }
     
