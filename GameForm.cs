@@ -60,12 +60,9 @@ namespace TicTacToe_with_Winforms
                 //If the game is over...
                 if (Turns.gameOver)
                 {
-                    foreach(Control control in gameForm.Controls)
+                    foreach(Button button in Turns.buttons)
                     {
-                        if( control is Button && control.Text.Length < 2) 
-                        {
-                            control.Enabled = false; 
-                        }                            
+                        button.Enabled = false;                             
                     }
                     PlayAgainButton.Enabled = true;
                 }

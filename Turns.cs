@@ -113,14 +113,11 @@ namespace TicTacToe_with_Winforms
                                          gameForm.GridFour, gameForm.GridFive, gameForm.GridSix,
                                          gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine};
 
-            foreach (Control control in gameForm.Controls)
+            foreach (Button button in buttons)
             {
-                if (control is Button && control.Text.Length < 2)
-                {
-                    control.BackColor = Color.Silver;
-                    control.Text = "";
-                    control.Enabled = true;
-                }
+                button.BackColor = Color.Silver;
+                button.Text = "";
+                button.Enabled = true;
             }
             if (sessions % 2 == 0)
             {
