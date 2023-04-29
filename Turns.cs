@@ -46,9 +46,9 @@ namespace TicTacToe_with_Winforms
             if (turns > 5)
             {
                 //Check Horizontal wins
-                if (CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree)){}
-                else if(CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix)){}
-                else if (CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine)){}
+                CheckWins(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
+                CheckWins(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
+                CheckWins(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
 
                 //Check Vertical wins
                 CheckWins(gameForm.GridOne, gameForm.GridFour, gameForm.GridSeven);
@@ -68,7 +68,7 @@ namespace TicTacToe_with_Winforms
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
-        internal static bool CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
+        internal static void CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text 
                 && buttonOne.Text != "")
@@ -93,8 +93,8 @@ namespace TicTacToe_with_Winforms
                     gameForm.SecondPlayerScore.Text = (Convert.ToInt16(gameForm.SecondPlayerScore.Text) + 1).ToString();
                 }
                 gameForm.PlayerIndicatorLabel.Text = $"{winner} Wins!!!";
-                return gameOver = true;
-            }return false;
+                gameOver = true;
+            }
         }
         internal static void InitialGrid()
         {
@@ -116,7 +116,8 @@ namespace TicTacToe_with_Winforms
             {
                 SettingLabel(gameForm.SecondPlayerLabel, false);
                 if (computerMode)
-                { 
+                {
+                    System.Threading.Thread.Sleep(700);
                     ComputerClick(GameForm.buttons, GameForm.random); 
                 }
             }
