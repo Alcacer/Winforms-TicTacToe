@@ -145,6 +145,11 @@ namespace TicTacToe_with_Winforms
                 }
             }
         }
+        internal static void SmartComputerChoice(Button buttonOne, Button buttonTwo, Button buttonThree)
+        {
+            List<Button> choices = new List<Button>() { buttonOne, buttonTwo, buttonThree };
+            HashSet<Button> uniqueIdentifiers = new HashSet<Button>(choices);
+        }
     }
     
 }

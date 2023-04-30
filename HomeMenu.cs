@@ -23,6 +23,7 @@ namespace TicTacToe_with_Winforms
         {
             computerMode = true;
             gameForm = new GameForm();
+            gameForm.PlayerIndicatorLabel.Text = "Player One is X!"; ;
             gameForm.Show();
             Hide();
             
