@@ -101,8 +101,15 @@ namespace TicTacToe_with_Winforms
         }
         internal static void ComputerClick(List<Button> buttonList, Random random)
         {
-            int index = random.Next(buttonList.Count);
-            Button computerChoice = buttonList[index];
+            Button computerChoice;
+            if (turns > 3)
+            {
+                computerChoice = SmartComputerChoice(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
+            } else
+            {
+                int index = random.Next(buttonList.Count);
+                computerChoice = buttonList[index];
+            }
             computerChoice.PerformClick();
         }
         internal static void InitialGrid()
@@ -145,10 +152,24 @@ namespace TicTacToe_with_Winforms
                 }
             }
         }
-        internal static void SmartComputerChoice(Button buttonOne, Button buttonTwo, Button buttonThree)
+        internal static Button SmartComputerChoice(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
-            List<Button> choices = new List<Button>() { buttonOne, buttonTwo, buttonThree };
-            HashSet<Button> uniqueIdentifiers = new HashSet<Button>(choices);
+            if(buttonOne.Text != "" && (buttonTwo.Text == buttonOne.Text || buttonThree.Text == buttonOne.Text))
+            {
+                if(buttonTwo.Text == buttonOne.Text)
+                {
+                    return buttonThree;
+                }
+                else if(buttonThree.Text == buttonOne.Text)
+                {
+                    return buttonTwo;
+                }
+            }
+            else if (buttonTwo.Text != "" && (buttonTwo.Text == buttonThree.Text))
+            {
+                return buttonOne;
+            }
+            return buttonOne;
         }
     }
     
