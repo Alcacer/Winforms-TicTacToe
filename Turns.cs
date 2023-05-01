@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -102,12 +103,83 @@ namespace TicTacToe_with_Winforms
         internal static void ComputerClick(List<Button> buttonList, Random random)
         {
             Button computerChoice;
+            int index = random.Next(buttonList.Count);
             if (turns > 3)
             {
-                computerChoice = SmartComputerChoice(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
-            } else
+                //Horizontal checks
+                var values = SmartComputerChoice(gameForm.GridOne, gameForm.GridTwo, gameForm.GridThree);
+                if (values.Item2 && values.Item1.Enabled)
+                {
+                    computerChoice = values.Item1;
+                }
+                else
+                {
+                    values = SmartComputerChoice(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
+                    if (values.Item2 && values.Item1.Enabled)
+                    {
+                        computerChoice = values.Item1;
+                    }
+                    else
+                    {
+                        values = SmartComputerChoice(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
+                        if (values.Item2 && values.Item1.Enabled)
+                        {
+                            computerChoice = values.Item1;
+                        }
+
+                        //Vertical Checks
+                        else
+                        {
+                            values = SmartComputerChoice(gameForm.GridOne, gameForm.GridFour, gameForm.GridSeven);
+                            if (values.Item2 && values.Item1.Enabled)
+                            {
+                                computerChoice = values.Item1;
+                            }
+                            else
+                            {
+                                values = SmartComputerChoice(gameForm.GridTwo, gameForm.GridFive, gameForm.GridEight);
+                                if (values.Item2 && values.Item1.Enabled)
+                                {
+                                    computerChoice = values.Item1;
+                                }
+                                else
+                                {
+                                    values = SmartComputerChoice(gameForm.GridThree, gameForm.GridSix, gameForm.GridNine);
+                                    if (values.Item2 && values.Item1.Enabled)
+                                    {
+                                        computerChoice = values.Item1;
+                                    }
+
+                                    //Diagonal Checks
+                                    else
+                                    {
+                                        values = SmartComputerChoice(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
+                                        if (values.Item2 && values.Item1.Enabled)
+                                        {
+                                            computerChoice = values.Item1;
+                                        }
+                                        else
+                                        {
+                                            values = SmartComputerChoice(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
+                                            if (values.Item2 && values.Item1.Enabled)
+                                            {
+                                                computerChoice = values.Item1;
+                                            }
+                                            else
+                                            {
+                                                computerChoice = buttonList[index];
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+
+            else
             {
-                int index = random.Next(buttonList.Count);
                 computerChoice = buttonList[index];
             }
             computerChoice.PerformClick();
@@ -152,24 +224,24 @@ namespace TicTacToe_with_Winforms
                 }
             }
         }
-        internal static Button SmartComputerChoice(Button buttonOne, Button buttonTwo, Button buttonThree)
+        internal static (Button, bool) SmartComputerChoice(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
             if(buttonOne.Text != "" && (buttonTwo.Text == buttonOne.Text || buttonThree.Text == buttonOne.Text))
             {
                 if(buttonTwo.Text == buttonOne.Text)
                 {
-                    return buttonThree;
+                    return (buttonThree, true);
                 }
                 else if(buttonThree.Text == buttonOne.Text)
                 {
-                    return buttonTwo;
+                    return (buttonTwo, true);
                 }
             }
             else if (buttonTwo.Text != "" && (buttonTwo.Text == buttonThree.Text))
             {
-                return buttonOne;
+                return (buttonOne, true);
             }
-            return buttonOne;
+            return (buttonOne, false);
         }
     }
     
