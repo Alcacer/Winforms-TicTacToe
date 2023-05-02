@@ -8,6 +8,7 @@ namespace TicTacToe_with_Winforms
 {
     internal class Turns
     {
+        // The sessions variable is for the amount of sessions or times the duel has been played for, while the turns is the number of turns in a session.
         internal static int sessions = 1;
         internal static int turns = 1;
         internal static bool firstPlayerTurn = true;
@@ -15,6 +16,7 @@ namespace TicTacToe_with_Winforms
 
         internal static char GetTurn()
         {
+            //Since X always starts no matter what, then for even turns X is returned, while O is returned for odd turns.
             if (turns % 2 == 0)
             {
                 turns++;
@@ -27,14 +29,19 @@ namespace TicTacToe_with_Winforms
             }
         }
 
-        //To remove repetition of code.
+        //This is for the setting of the PlayerIndicator Label to specify who's going to play next. Only in the versus player mode.
         internal static void SettingLabel(Label label, bool status)
         {
             gameForm.PlayerIndicatorLabel.Text =
                         $"{label.Text.TrimEnd(':')} to play...";
             firstPlayerTurn = status;
         }
-
+        /// <summary>
+        /// The Main Function of this class. The playerIndicator label for the computerMode is constant for each session. 
+        /// But in the versus Player mode it changes after every turn. Hence the first condition check.
+        /// The wins are checked after turns is more than 5, because that is the least amount of turns to get a winner in this case.
+        /// Turns is 1, and after every click it is incremented. After 5 clicks, is the minimum amount of turns for a winner to emerge.
+        /// </summary>
         internal static void MainFunction()
         {
             if (!computerMode)
@@ -67,6 +74,14 @@ namespace TicTacToe_with_Winforms
             }
         }
 
+        /// <summary>
+        /// This checks the game for possible wins.
+        /// It takes three buttons and checks if those buttons have the same texts.
+        /// if there is a winner, it increases the score of the winner by 1.
+        /// </summary>
+        /// <param name="buttonOne"></param>
+        /// <param name="buttonTwo"></param>
+        /// <param name="buttonThree"></param>
         internal static void CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
         {
             if (buttonOne.Text == buttonTwo.Text && buttonOne.Text == buttonThree.Text
@@ -96,6 +111,10 @@ namespace TicTacToe_with_Winforms
             }
         }
 
+        /// <summary>
+        /// This initializes the grid. It takes everything and sets it to their initial values apart from the sessions variable
+        /// which is incremented by one. If it is an even session, the computer then clicks a button.
+        /// </summary>
         internal static void InitialGrid()
         {
             sessions++;

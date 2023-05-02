@@ -5,7 +5,7 @@ namespace TicTacToe_with_Winforms
 {
     internal static class Program
     {
-        //Did it this way in order for the GameForm to be able to call up the home form.
+        //Initialized it and made it static so that it'd be callable in other classes.
         internal static HomeMenu homeMenu;
         /// <summary>
         /// The main entry point for the application.

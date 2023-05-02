@@ -11,6 +11,7 @@ namespace TicTacToe_with_Winforms
         }
 
         internal static GameForm gameForm;
+        //This computerMode variable is to check when the Versus Computer mode is selected. Pretty obvious I might say.
         internal static bool computerMode;
         private void VersusComButton_Click(object sender, EventArgs e)
         {
@@ -19,7 +20,6 @@ namespace TicTacToe_with_Winforms
             gameForm.PlayerIndicatorLabel.Text = "Player One is X!"; ;
             gameForm.Show();
             Hide();
-            
         }
 
         private void VersusPlayerButton_Click(object sender, EventArgs e)
