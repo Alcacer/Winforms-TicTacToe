@@ -33,7 +33,15 @@ namespace TicTacToe_with_Winforms
                 return 'X';
             }
         }
-        
+
+        //To remove repetition of code.
+        internal static void SettingLabel(Label label, bool status)
+        {
+            gameForm.PlayerIndicatorLabel.Text =
+                        $"{label.Text.TrimEnd(':')} to play...";
+            firstPlayerTurn = status;
+        }
+
         internal static void MainFunction()
         {
             if (!computerMode)
@@ -64,14 +72,6 @@ namespace TicTacToe_with_Winforms
                 CheckWins(gameForm.GridOne, gameForm.GridFive, gameForm.GridNine);
                 CheckWins(gameForm.GridThree, gameForm.GridFive, gameForm.GridSeven);
             }
-        }
-
-        //To remove repetition of code.
-        internal static void SettingLabel(Label label, bool status)
-        {
-            gameForm.PlayerIndicatorLabel.Text =
-                        $"{label.Text.TrimEnd(':')} to play...";
-            firstPlayerTurn = status;
         }
 
         internal static void CheckWins(Button buttonOne, Button buttonTwo, Button buttonThree)
