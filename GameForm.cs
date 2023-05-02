@@ -85,7 +85,7 @@ namespace TicTacToe_with_Winforms
                         (Turns.sessions % 2 == 0 && Turns.turns % 2 != 0))
                     {
                         System.Threading.Thread.Sleep(700);
-                        Turns.ComputerClick(buttons, random);
+                        ComputerLogic.ComputerClick(buttons, random);
                     }
                 }
             }
