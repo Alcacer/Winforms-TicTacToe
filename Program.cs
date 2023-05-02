@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Deployment.Internal;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe_with_Winforms
