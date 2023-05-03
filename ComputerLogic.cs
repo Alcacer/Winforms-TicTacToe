@@ -198,7 +198,7 @@ namespace TicTacToe_with_Winforms
                 horizontalValue = (values.Item1, values.Item3);
 
                 //Checking if there are two winning horizontals adjacent to each other. 
-                if (Turns.turns > 5)
+                if (Turns.turns > 4)
                 {
                     values = SmartComputerChoice(gameForm.GridFour, gameForm.GridFive, gameForm.GridSix);
                     if (values.Item2 && values.Item1.Enabled)
@@ -223,7 +223,7 @@ namespace TicTacToe_with_Winforms
                     horizontalValue = (values.Item1, values.Item3);
 
                     //Checking if there are two winning horizontals adjacent to each other
-                    if (Turns.turns > 5)
+                    if (Turns.turns > 4)
                     {
                         values = SmartComputerChoice(gameForm.GridSeven, gameForm.GridEight, gameForm.GridNine);
                         if (values.Item2 && values.Item1.Enabled)
@@ -256,7 +256,7 @@ namespace TicTacToe_with_Winforms
                 verticalValue = (values.Item1, values.Item3);
 
                 //Checking if there are two winning verticals adjacent to each other
-                if (Turns.turns > 5) 
+                if (Turns.turns > 4) 
                 {
                     values = SmartComputerChoice(gameForm.GridTwo, gameForm.GridFive, gameForm.GridEight);
                     if (values.Item2 && values.Item1.Enabled)
@@ -281,7 +281,7 @@ namespace TicTacToe_with_Winforms
                     verticalValue = (values.Item1, values.Item3);
 
                     //Checking if there are two winning verticals adjacent to each other
-                    if (Turns.turns > 5) 
+                    if (Turns.turns > 4) 
                     {
                         values = SmartComputerChoice(gameForm.GridThree, gameForm.GridSix, gameForm.GridNine);
                         if (values.Item2 && values.Item1.Enabled)
