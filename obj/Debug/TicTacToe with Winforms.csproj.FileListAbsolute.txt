@@ -1,12 +1,16 @@
-C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\TicTacToe with Winforms.exe.config
-C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\TicTacToe with Winforms.exe
-C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\TicTacToe with Winforms.pdb
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.csproj.AssemblyReference.cache
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.csproj.SuggestedBindingRedirects.cache
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe_with_Winforms.HomeMenu.resources
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe_with_Winforms.Properties.Resources.resources
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.csproj.GenerateResource.cache
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.csproj.CoreCompileInputs.cache
-C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.exe
-C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe with Winforms.pdb
 C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\TicTacToe_with_Winforms.GameForm.resources
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\X and O.exe.config
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\X and O.exe.manifest
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\X and O.application
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\X and O.exe
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\bin\Debug\X and O.pdb
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\X and O.exe.manifest
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\X and O.application
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\X and O.exe
+C:\Users\Alcacer\Desktop\TicTacToe with Winforms\obj\Debug\X and O.pdb
