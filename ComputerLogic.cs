@@ -156,7 +156,19 @@ namespace TicTacToe_with_Winforms
             //When the number of turns is less than 3, a random button is picked.
             else
             {
-                computerChoice = buttonList[index];
+                //For the first turn of the computer in odd sessions, to play in the middle box.
+                if (Turns.turns == 2)
+                {
+                    if (gameForm.GridFive.Enabled)
+                    {
+                        computerChoice = gameForm.GridFive;
+                    }
+                    
+                }
+                else
+                {
+                    computerChoice = buttonList[index];
+                }
             }
 
             //Performs a click after a choice has been made.
