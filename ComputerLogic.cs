@@ -163,7 +163,12 @@ namespace TicTacToe_with_Winforms
                     {
                         computerChoice = gameForm.GridFive;
                     }
-                    
+                    //if the middle box is already played, then one of the diagonal boxes is chosen.
+                    else
+                    {
+                        computerChoice = 
+                            new List<Button> { gameForm.GridOne, gameForm.GridSeven, gameForm.GridThree, gameForm.GridNine }[GameForm.random.Next(4)];
+                    }
                 }
                 else
                 {
